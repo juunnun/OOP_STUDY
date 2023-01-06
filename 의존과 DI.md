@@ -89,3 +89,13 @@ Calculator cal = new Calculator();
 ScheduleService schSvcScheduleService = new ScheduleService(userRepo);
 schSvc.setCalculator(cal);
 ```
+## 조립기(Assembler)
+조립기가 객체 생성, 의존 주입을 처리
+![poster](./img/의존주입.jpg)
+
+## DI장점
+![poster](./img/DI장점.jpg)
+![poster](./img/DI장점2.jpg)
+
+### DI를 습관처럼 사용하자
+의존 객체는 주입받도록 코드 작성하는 습관을 가지자
