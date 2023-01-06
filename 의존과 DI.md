@@ -54,4 +54,38 @@ public class blockUserService {
 }
 ```
 해결방안 2: 몇 가지 의존 대상을 단일 기능으로 묶어서 생각해보면 의존 대상을 줄일 수 있음
+![poster](./img/묶어보기.jpg)
 
+## 의존 대상 객체를 직접 생성하면??
+
+생성클래스가 바뀌면 의존하는 코드도 바뀐다
+
+### 의존대상 객체를 직접 생성하지 않는 방법
+1. 팩토리, 빌더
+2. 의존 주입(Dependency Injection)
+3. 서비스 로케이터(Service Locator)
+
+## 의존 주입(Dependency Injection)
+외부에서 의존 객체를 주입
+생성자나 메서드를 이용하여 주입한다.
+```JAVA
+public class ScheduleService {
+	private UserReposiotry repository;
+	private Calculator cal;
+	
+	public ScheduleService(UserRegistService repositoryRegistService repository) {
+		this.repository = repository;
+	
+	}
+	
+	PublicKey voidKey setCalculator(Calculator Cal) {
+		this.cal = cal;
+	}
+}
+// 초기화 코드
+UserRepository userRepo = new DbUserRepository();
+Calculator cal = new Calculator();
+
+ScheduleService schSvcScheduleService = new ScheduleService(userRepo);
+schSvc.setCalculator(cal);
+```
